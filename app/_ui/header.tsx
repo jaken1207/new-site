@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -6,8 +7,17 @@ const header = () => {
     <header className="bg-white shadow-md">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center justify-between px-6 py-4 space-y-2 md:space-y-0">
         {/* 左側: ロゴ */}
-        <h1 className="flex items-center space-x-2">
-          <span className="font-extrabold text-4xl">ながた整骨院</span>
+        <h1 className="flex items-center space-x-3">
+          <Image
+            src="/logo.png"
+            alt="ながた整骨院のロゴ"
+            width={48}
+            height={48}
+            className="w-12 h-12 object-contain"
+          />
+          <span className="font-extrabold text-4xl text-gray-800">
+            ながた整骨院
+          </span>
         </h1>
 
         {/* 中央: ナビゲーション */}
