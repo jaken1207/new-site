@@ -27,7 +27,7 @@ export default function HomePage() {
           <p className="mt-2">※ 診療時間の10分前を目安にご来院ください</p>
         </div>
         <div className="mt-4 p-3 bg-red-100 text-red-700 border border-red-300 rounded text-center">
-          <strong>お知らせ：</strong>5月30日（金）は休診いたします。
+          <strong>お知らせ：</strong>直近のお知らせはありません。
         </div>
       </section>
 
