@@ -61,11 +61,10 @@ export default function HomePage() {
             <p className="mt-2 leading-relaxed text-base">
               A.{" "}
               <span className="text-red-500 font-semibold">
-                予約制ではございません
+                予約なしでも施術可能ですが、予約優先とさせていただいております。
               </span>
-              ので、診療時間内に直接ご来院ください。
               <br />
-              なお、水曜・土曜の午後は実費診療となりますので、事前にご確認ください。
+              なお、水曜・土曜の午後は実費診療となりますので、事前にご連絡ください。
             </p>
           </li>
           <li>
@@ -77,7 +76,7 @@ export default function HomePage() {
               <span className="text-red-500 font-semibold">
                 保険適用は可能です。
               </span>
-              健康保険証を忘れずにお持ちください。
+              健康保険証かマイナンバーカードを忘れずにお持ちください。
               <br />
               当院では、交通事故、各種保険、生活保護等による治療を行っております。
             </p>

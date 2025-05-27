@@ -6,9 +6,9 @@ const header = () => {
     <header className="bg-white shadow-md">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center justify-between px-6 py-4 space-y-2 md:space-y-0">
         {/* 左側: ロゴ */}
-        <div className="flex items-center space-x-2">
+        <h1 className="flex items-center space-x-2">
           <span className="font-extrabold text-4xl">ながた整骨院</span>
-        </div>
+        </h1>
 
         {/* 中央: ナビゲーション */}
         <nav className="space-x-6 text-gray-700 text-sm md:text-base">
