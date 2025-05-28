@@ -47,6 +47,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <meta
+        name="google-site-verification"
+        content="sAA--Mwx24gWdOsKGPDAil9RiKf1EmHCza3x0xihFGc"
+      />
       <body className={`${notoSansJP.className}`}>
         <Header />
         <main className="max-w-5xl mx-auto p-6">{children}</main>
