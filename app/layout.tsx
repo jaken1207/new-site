@@ -22,6 +22,23 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ながた整骨院" }],
   creator: "ながた整骨院",
+  openGraph: {
+    title: "ながた整骨院｜倉敷の地域密着型整骨院",
+    description:
+      "倉敷市のながた整骨院では、腰痛・肩こり・スポーツ障害などに対応。最新技術と丁寧な施術で地域の健康を支えます。",
+    url: "https://nagata-seikotsuin.org",
+    siteName: "ながた整骨院",
+    locale: "ja_JP",
+    type: "website",
+    images: [
+      {
+        url: "https://nagata-seikotsuin.org/main.png",
+        width: 800,
+        height: 333,
+        alt: "ながた整骨院の外観と施術の様子",
+      },
+    ],
+  },
 };
 export default function RootLayout({
   children,
