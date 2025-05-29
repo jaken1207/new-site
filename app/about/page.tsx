@@ -137,13 +137,13 @@ export default function AboutPage() {
 
         {[
           {
-            name: "Fさん　59歳（男性）",
+            name: "Fさん　50代（男性）",
             content: `社会人バレーのコーチをされているFさん。左肩が上がらず、サーブができるようになるのが目標。
             夏から週1〜2回の治療と、自宅での段階ごとのストレッチを続け、今では軽いサーブが可能に。
             チームと共に週2回の練習を継続されています。`,
           },
           {
-            name: "Kさん　75歳（女性）",
+            name: "Kさん　70代（女性）",
             content: `2週間前に娘に連れられて来院。足の痛みで歩行も自転車も困難でしたが、現在は自転車で通院。
             草取り時の痛みはあるものの、日常の自由が戻ってきたとのことです。`,
           },
@@ -171,6 +171,19 @@ export default function AboutPage() {
             </p>
           </article>
         ))}
+      </section>
+
+      {/* メッセージセクション */}
+      <section className="text-center py-8 bg-yellow-50 border-4 border-yellow-200">
+        <p className="text-3xl md:text-3xl font-extrabold text-red-600 leading-relaxed mb-2">
+          ご予約なしで診察可能です！
+        </p>
+        <p className="text-xl md:text-2xl text-gray-800 font-semibold leading-relaxed">
+          気になる 痛み を一緒に治療しましょう。
+          <br />
+          <span className="text-blue-600">ご不明な点</span>{" "}
+          はお気軽にお問い合わせください。
+        </p>
       </section>
     </main>
   );
