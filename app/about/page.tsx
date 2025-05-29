@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <main className="p-6 space-y-10 max-w-3xl mx-auto">
@@ -35,6 +37,7 @@ export default function AboutPage() {
         {[
           {
             title: "1. 問診と検査",
+            image: "/treat1.jpg",
             content: (
               <>
                 まず問診票の内容を確認し、具体的な症状をお伺いします。
@@ -47,6 +50,7 @@ export default function AboutPage() {
           },
           {
             title: "2. 手技療法",
+            image: "/treat2.jpg",
             content: (
               <>
                 当院の基本はこの手技療法です。
@@ -62,6 +66,7 @@ export default function AboutPage() {
           },
           {
             title: "3. 物理療法",
+            image: "/treat3.jpg",
             content: (
               <>
                 各種の治療器具を用い、筋肉や関節の緊張を緩和し痛みを軽減します。
@@ -70,6 +75,7 @@ export default function AboutPage() {
           },
           {
             title: "4. 症状説明",
+            image: "/treat4.jpg",
             content: (
               <>
                 症状や治療内容を丁寧に説明します。
@@ -79,11 +85,20 @@ export default function AboutPage() {
             ),
           },
         ].map((step, index) => (
-          <div key={index}>
-            <h3 className="text-xl font-semibold border-b border-gray-300 pb-1">
+          <div key={index} className="mb-8">
+            <h3 className="text-xl font-semibold border-b border-gray-300 pb-1 mb-4">
               {step.title}
             </h3>
-            <div className="mt-2 text-gray-700 text-sm">{step.content}</div>
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div className="flex-1 text-gray-700 text-sm">{step.content}</div>
+              <Image
+                src={step.image}
+                alt={step.title}
+                className="w-full max-w-2xs rounded-md shadow"
+                width={500}
+                height={300}
+              />
+            </div>
           </div>
         ))}
       </section>
