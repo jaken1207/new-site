@@ -17,9 +17,9 @@ export default function HomePage() {
 
       {/* 診療時間セクション */}
       <section className="bg-gray-50 py-8 px-4 max-w-3xl mx-auto rounded-xl shadow-md">
-        <h3 className="text-2xl font-semibold mb-4 text-center text-gray-800">
+        <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">
           診療時間のご案内
-        </h3>
+        </h2>
         <div className="text-gray-700 text-center">
           <p>月・火・木・金：8:00〜12:30 / 15:00〜19:00</p>
           <p>水・土：8:00〜13:30（15:00〜19:00は実費診療）</p>
@@ -33,9 +33,9 @@ export default function HomePage() {
 
       {/* よくあるご質問セクション */}
       <section className="max-w-3xl bg-white rounded-lg mx-auto py-12 px-4 mt-8 shadow-md">
-        <h3 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
           よくあるご質問
-        </h3>
+        </h2>
         <ul className="space-y-6 p-3">
           <li>
             <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
@@ -159,9 +159,9 @@ export default function HomePage() {
         </ul>
       </section>
       <section className="my-10">
-        <h3 className="text-2xl font-semibold mb-4 text-center text-gray-800">
+        <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">
           アクセス
-        </h3>
+        </h2>
         <div className="mx-auto max-w-3xl h-[400px] rounded-xl overflow-hidden shadow-md">
           <iframe
             title="ながた整骨院 地図"
