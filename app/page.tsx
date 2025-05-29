@@ -22,7 +22,7 @@ export default function HomePage() {
         </h3>
         <div className="text-gray-700 text-center">
           <p>月・火・木・金：8:00〜12:30 / 15:00〜19:00</p>
-          <p>水・土：8:00〜12:30（15:00〜19:00は実費診療）</p>
+          <p>水・土：8:00〜13:30（15:00〜19:00は実費診療）</p>
           <p className="text-red-500 mt-2">※ 日曜・祝日は休診</p>
           <p className="mt-2">※ 診療時間の10分前を目安にご来院ください</p>
         </div>
