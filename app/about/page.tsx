@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <main className="p-6 space-y-10">
+    <main className="p-6 space-y-10 max-w-3xl mx-auto">
       {/* 院長・スタッフ紹介 */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold border-l-4 border-yellow-400 pl-2">
