@@ -28,11 +28,8 @@ const header = () => {
           <Link href="/about" className="hover:text-red-400 transition-colors">
             当院について
           </Link>
-          <Link
-            href="/services"
-            className="hover:text-red-400 transition-colors"
-          >
-            診療内容
+          <Link href="/blogs" className="hover:text-red-400 transition-colors">
+            ブログ
           </Link>
         </nav>
         <div className="text-sm text-gray-700 md:text-right">
