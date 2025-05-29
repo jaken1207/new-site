@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://nagata-seikotsuin.org/sitemap.xml
