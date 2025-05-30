@@ -135,9 +135,9 @@ export default function AboutPage() {
         <div className="text-base pt-4">
           <h3 className="font-bold mb-1 text-gray-700">▶ 料金</h3>
           <p>
-            初診：5,000円
+            初診：7,000円
             <br />
-            再診以降：3,000円
+            再診以降：4,000円
           </p>
           <p className="text-blue-600 mt-2 text-sm font-semibold">
             ※当院で治療中の方は初診料は必要ありません
