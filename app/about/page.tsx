@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "../_comp/_ui/card";
 // import { Badge } from "@/components/ui/badge";
-import { Star, Users } from "lucide-react";
+import { Users } from "lucide-react";
 
 export default function AboutPage() {
   const staff = [
