@@ -26,7 +26,7 @@ export default function Header() {
               height={30}
               className="mr-1 "
             />
-            <Link href="/" className="text-2xl font-bold text-green-700">
+            <Link href="/" className="text-2xl font-bold text-gray-700">
               ながた整骨院
             </Link>
           </div>
