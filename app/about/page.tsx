@@ -116,7 +116,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-600 italic">
-                  "{member.message}"
+                  &quot;{member.message}&quot;
                 </p>
               </CardContent>
             </Card>
@@ -271,7 +271,9 @@ export default function AboutPage() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-sm">"{testimonial.comment}"</p>
+                <p className="text-gray-600 text-sm">
+                  &quot;{testimonial.comment}&quot;
+                </p>
               </CardContent>
             </Card>
           ))}
