@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Noto_Sans_JP } from "next/font/google";
 import Header from "./_comp/header";
+import Footer from "./_comp/footer";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -50,9 +51,7 @@ export default function RootLayout({
       <body className={`${notoSansJP.className}`}>
         <Header />
         <main className="max-w-5xl mx-auto p-6">{children}</main>
-        <footer className="bg-white text-center py-4 mt-10">
-          <small>&copy; {new Date().getFullYear()} ながた整骨院</small>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
