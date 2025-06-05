@@ -1,205 +1,285 @@
 import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../_comp/_ui/card";
+// import { Badge } from "@/components/ui/badge";
+import { Star, Users } from "lucide-react";
 
 export default function AboutPage() {
+  const staff = [
+    {
+      name: "永田 正太郎",
+      role: "院長、柔道整復師",
+      message: "患者様一人ひとりに寄り添った治療を心がけております。",
+    },
+    {
+      name: "永田 寿子",
+      role: "スタッフ",
+      message: "女性の患者様も安心してご相談ください。",
+    },
+  ];
+
+  const treatmentSteps = [
+    {
+      step: 1,
+      title: "問診と検査",
+      description:
+        "問診票を確認し、症状を詳しくお伺いします。小さなことでも遠慮なくご相談ください。",
+      image: "/treat1.jpg",
+    },
+    {
+      step: 2,
+      title: "手技療法",
+      description:
+        "骨・関節・筋肉を整え、自然治癒力を最大限に引き出す施術を行います。無痛で心地よい施術です。",
+      image: "/treat2.jpg",
+    },
+    {
+      step: 3,
+      title: "物理療法",
+      description:
+        "治療機器を使って、筋肉や関節の緊張を和らげ、痛みの軽減を図ります。",
+      image: "/treat3.jpg",
+    },
+    {
+      step: 4,
+      title: "症状説明",
+      description:
+        "症状や治療内容、今後の通院計画や注意点などをわかりやすく丁寧にご説明します。",
+      image: "/treat4.jpg",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "50代 男性",
+      condition: "肩痛",
+      comment:
+        "社会人バレーのコーチをされているFさん。左肩が上がらず、サーブができるようになるのが目標。夏から週1〜2回の治療と、自宅での段階ごとのストレッチを続け、今では軽いサーブが可能に。チームと共に週2回の練習を継続されています。",
+    },
+    {
+      name: "70代 女性",
+      condition: "膝痛",
+      comment:
+        "2週間前に娘に連れられて来院。足の痛みで歩行も自転車も困難でしたが、現在は自転車で通院。草取り時の痛みはあるものの、日常の自由が戻ってきたとのことです。",
+    },
+    {
+      name: "20代 男性",
+      condition: "スポーツ外傷",
+      comment:
+        "サッカーで怪我をした際にお世話になりました。早期復帰できて感謝しています。",
+    },
+    {
+      name: "60代 女性",
+      condition: "交通事故後遺症",
+      comment:
+        "追突事故後、首から背中にかけての痛みで寝たきりに。友人に勧められて来院し、10日後には仕事復帰が見えてきました。早めの治療が効果的だったそうです。",
+    },
+    {
+      name: "60代 女性",
+      condition: "腰痛",
+      comment:
+        "ぎっくり腰になり旅行を諦めかけましたが、治療の継続で旅行も無事実現。趣味のダンスも再開できました。",
+    },
+  ];
+
   return (
-    <main className="p-6 space-y-10 max-w-3xl mx-auto">
-      {/* 院長・スタッフ紹介 */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold border-l-4 border-yellow-400 pl-2">
-          スタッフ紹介
-        </h2>
-        <div>
-          <h3 className="text-xl font-semibold text-gray-800">院長</h3>
-          <p className="text-gray-700">永田 正太郎</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold text-gray-800">スタッフ</h3>
-          <p className="text-gray-700">永田 寿子</p>
-        </div>
-      </section>
-
-      {/* 治療の流れ */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-bold border-l-4 border-yellow-400 pl-2">
-          治療の流れ
-        </h2>
-
-        <div className="bg-green-50 p-4 rounded-md shadow">
-          <p>
-            <strong className="text-red-600">
-              当院では30年の経験をもつ柔道整復師が全ての患者様の治療にあたっています。
-            </strong>
-            <br />
-            個々の状態や症状にあわせて手技や治療器を用いて施術を行います。
+    <div className="min-h-screen ">
+      {/* Staff Introduction */}
+      <section className="my-16 max-w-4xl mx-auto ">
+        <div className="text-center mb-12 ">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            スタッフ紹介
+          </h2>
+          <p className="text-gray-600">
+            経験豊富なスタッフが皆様をサポートします
           </p>
         </div>
 
-        {[
-          {
-            title: "1. 問診と検査",
-            image: "/treat1.jpg",
-            content: (
-              <>
-                まず問診票の内容を確認し、具体的な症状をお伺いします。
-                <br />
-                <span className="text-red-600">
-                  どんなに小さな事でもお話し下さい。それが悩みを解決する「カギ」になるかもしれません。
-                </span>
-              </>
-            ),
-          },
-          {
-            title: "2. 手技療法",
-            image: "/treat2.jpg",
-            content: (
-              <>
-                当院の基本はこの手技療法です。
-                <br />
-                骨や関節、筋肉を正常に整え、
-                <span className="text-red-600">
-                  自然治癒力を最大限に引き出すことを目指します。
-                </span>
-                <br />
-                ソフト・無痛・心地よい施術を症状にあわせて行います。
-              </>
-            ),
-          },
-          {
-            title: "3. 物理療法",
-            image: "/treat3.jpg",
-            content: (
-              <>
-                各種の治療器具を用い、筋肉や関節の緊張を緩和し痛みを軽減します。
-              </>
-            ),
-          },
-          {
-            title: "4. 症状説明",
-            image: "/treat4.jpg",
-            content: (
-              <>
-                症状や治療内容を丁寧に説明します。
-                <br />
-                予防策・注意点・今後の通院計画もご案内いたします。
-              </>
-            ),
-          },
-        ].map((step, index) => (
-          <div key={index} className="mb-8">
-            <h3 className="text-xl font-semibold border-b border-gray-300 pb-1 mb-4">
-              {step.title}
-            </h3>
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-              <div className="flex-1 text-gray-700 text-sm">{step.content}</div>
-              <Image
-                src={step.image}
-                alt={step.title}
-                className="w-full max-w-2xs rounded-md shadow"
-                width={500}
-                height={300}
-              />
-            </div>
-          </div>
-        ))}
-      </section>
-      <section className="p-6 mt-12 space-y-6 bg-yellow-50 border-l-4 border-yellow-400">
-        <h2 className="text-2xl font-bold text-yellow-700">
-          整体治療予約制のお知らせ
-        </h2>
-
-        <p className="text-lg text-gray-700 font-semibold border-b pb-2">
-          手技による実費診療を行っております。
-        </p>
-
-        <p className="text-base">
-          下記のような症状の方に特にお勧めいたします！
-        </p>
-
-        <ul className="list-disc list-inside space-y-1 text-red-600 pl-2">
-          <li>他のマッサージ、整体などでは改善されなかった</li>
-          <li>時間をかけて、ゆっくり診てほしい</li>
-          <li>昔からの腰痛、肩こりが激しくて困っている</li>
-          <li>頭痛、便秘、生理痛など体調がすぐれない</li>
-          <li>他の人と一緒だと恥ずかしい</li>
-          <li>時間通りに治療をしてほしい　など</li>
-        </ul>
-
-        <div className="text-sm bg-gray-100 p-4 rounded border border-gray-300">
-          実費診療は、水曜日と土曜日の午後のみ承っております。
-          <br />
-          当院受付にお声掛けいただくか、お電話にてご予約ください。
-          <br />
-          時間はご相談くださいませ♪
-        </div>
-
-        <div className="text-base pt-4">
-          <h3 className="font-bold mb-1 text-gray-700">▶ 料金</h3>
-          <p>
-            初診：7,000円
-            <br />
-            再診以降：4,000円
-          </p>
-          <p className="text-blue-600 mt-2 text-sm font-semibold">
-            ※当院で治療中の方は初診料は必要ありません
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 m-8">
+          {staff.map((member, index) => (
+            <Card
+              key={index}
+              className="text-center border border-gray-200 shadow-sm"
+            >
+              <CardHeader>
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+                  <Users className="h-16 w-16 text-gray-400" />
+                </div>
+                <CardTitle className="text-xl">{member.name}</CardTitle>
+                <CardDescription className="text-green-600 font-semibold">
+                  {member.role}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 italic">
+                  "{member.message}"
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
-      {/* 患者さんの声 */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-bold border-l-4 border-yellow-400 pl-2">
-          患者さんの声
-        </h2>
 
-        {[
-          {
-            name: "Fさん　50代（男性）",
-            content: `社会人バレーのコーチをされているFさん。左肩が上がらず、サーブができるようになるのが目標。
-            夏から週1〜2回の治療と、自宅での段階ごとのストレッチを続け、今では軽いサーブが可能に。
-            チームと共に週2回の練習を継続されています。`,
-          },
-          {
-            name: "Kさん　70代（女性）",
-            content: `2週間前に娘に連れられて来院。足の痛みで歩行も自転車も困難でしたが、現在は自転車で通院。
-            草取り時の痛みはあるものの、日常の自由が戻ってきたとのことです。`,
-          },
-          {
-            name: "Yさん　60代（女性）",
-            content: `追突事故後、首から背中にかけての痛みで寝たきりに。
-            友人に勧められて来院し、10日後には仕事復帰が見えてきました。早めの治療が効果的だったそうです。`,
-          },
-          {
-            name: "Yさん　40代（男性）",
-            content: `約1年半通院され、以前より体調が安定してきたとのこと。今後も継続予定です。`,
-          },
-          {
-            name: "Tさん　60代（女性）",
-            content: `ぎっくり腰になり旅行を諦めかけましたが、治療の継続で旅行も無事実現。
-            趣味のダンスも再開できました。`,
-          },
-        ].map((voice, i) => (
-          <article key={i} className="bg-gray-50 p-4 rounded-md shadow">
-            <h3 className="text-lg font-semibold text-gray-800">
-              {voice.name}
-            </h3>
-            <p className="text-gray-700 text-sm mt-2 whitespace-pre-line">
-              {voice.content}
+      {/* Treatment Process */}
+      <section className="mb-16 bg-green-50 p-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              治療の流れ
+            </h2>
+            <p className="text-gray-600">
+              個々の状態や症状にあわせて手技や治療器を用いて施術を行います。
             </p>
-          </article>
-        ))}
-      </section>
+          </div>
 
-      {/* メッセージセクション */}
-      <section className="text-center py-8 bg-yellow-50 border-4 border-yellow-200">
-        <p className="text-3xl md:text-3xl font-extrabold text-red-600 leading-relaxed mb-2">
-          ご予約なしで診察可能です！
-        </p>
-        <p className="text-xl md:text-2xl text-gray-800 font-semibold leading-relaxed">
-          気になる 痛み を一緒に治療しましょう。
-          <br />
-          <span className="text-blue-600">ご不明な点</span>{" "}
-          はお気軽にお問い合わせください。
-        </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {treatmentSteps.map((step, index) => (
+              <Card
+                key={index}
+                className="text-center border border-gray-200 shadow-sm bg-white"
+              >
+                <CardHeader>
+                  <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl font-bold text-green-600">
+                      {step.step}
+                    </span>
+                  </div>
+                  <CardTitle className="text-lg">{step.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col justify-between">
+                  <div className="mb-4">
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      className="block max-w-45 mx-auto rounded-md"
+                      width={500}
+                      height={300}
+                    />
+                  </div>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </section>
-    </main>
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
+      {/* Manual Therapy Service */}
+      <section className="mb-16 m-8">
+        <div className="max-w-5xl mx-auto ">
+          <Card className="bg-blue-50 border-blue-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center text-blue-800">
+                予約整体治療について
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  このような方におすすめ
+                </h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    時間通りに施術してほしい
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    時間をかけて、ゆっくり診てほしい
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    他の人と一緒だと恥ずかしい　など
+                  </li>
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    診療の詳細
+                  </h3>
+                  <ul className="space-y-3 text-gray-700">
+                    <li>
+                      <strong className="text-blue-700">実施時間：</strong>
+                      水・土（15:00〜19:00）
+                    </li>
+                    <li>
+                      <strong className="text-blue-700">予約制：</strong>
+                      当院受付またはお電話にてご予約ください
+                    </li>
+                    <li>
+                      <strong className="text-blue-700">保険適用外：</strong>
+                      自費診療となります
+                    </li>
+                    <li>※当院で治療中の方は初診料は必要ありません</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <div className="mb-4 flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-gray-900 flex-1">
+                      料金
+                    </h3>
+                  </div>
+
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex justify-between items-center p-3 bg-white rounded-lg border">
+                      <strong className="text-blue-700">初診：</strong>
+                      <span className="text-xl font-bold text-blue-800">
+                        7,000円
+                      </span>
+                    </li>
+                    <li className="flex justify-between items-center p-3 bg-white rounded-lg border">
+                      <strong className="text-blue-700">再診：</strong>
+                      <span className="text-xl font-bold text-blue-800">
+                        4,000円
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      <section className="p-8 bg-green-50">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">患者様の声</h2>
+          <p className="text-gray-600">
+            実際に治療を受けられた患者様からのお声をご紹介します
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <Card
+              key={index}
+              className="border border-gray-200 shadow-sm bg-white"
+            >
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle className="text-lg">
+                      {testimonial.name}
+                    </CardTitle>
+                  </div>
+                  <CardDescription>{testimonial.condition}</CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">"{testimonial.comment}"</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+    </div>
+    // </div>
   );
 }
