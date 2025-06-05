@@ -50,7 +50,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${notoSansJP.className}`}>
         <Header />
-        <main className="max-w-5xl mx-auto p-6">{children}</main>
+        <main className="mx-auto">{children}</main>
         <Footer />
       </body>
     </html>
