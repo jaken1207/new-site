@@ -1,8 +1,64 @@
 import Image from "next/image";
 import { Clock, Phone } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./_comp/_ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./_comp/_ui/accordion";
 
 export default function HomePage() {
+  const faqs = [
+    {
+      question: "どんな施術ですか？",
+      answer:
+        "お客さんひとりひとりの症状に応じ、その時の最も適した施術をいたします。\n特に「ソフト・無痛・心地よい手技療法」を重要視しており、物理療法と手技治療を行います。\n患者様の身体に合った施術を行っていますので、安心してご来院ください。",
+    },
+    {
+      question: "予約制ですか？",
+      answer:
+        "予約なしでも施術可能ですが、予約優先とさせていただいております。\nなお、水曜・土曜の午後は実費診療となりますので、事前にご連絡ください。",
+    },
+    {
+      question: "健康保険は使えますか？",
+      answer:
+        "保険適用は可能です。健康保険証かマイナンバーカードを忘れずにお持ちください。\n当院では、交通事故、各種保険、生活保護等による治療を行っております。",
+    },
+    {
+      question: "施術時間はどれくらいですか？",
+      answer: "初回は40〜50分、2回目以降は30〜40分程度です。",
+    },
+    {
+      question: "どのような症状に対応していますか？",
+      answer:
+        "肩こり、腰痛、膝の痛み、スポーツ障害、交通事故後のケアなど、幅広い症状に対応しています。",
+    },
+    {
+      question: "診察料はいくらですか？",
+      answer:
+        "初診時、1500円程度までです。2回目以降は、900円程度までとなります。\n治療内容にもよりますが、基本的に保険治療ですのでご安心ください。",
+    },
+    {
+      question: "クレジットカードは使えますか？",
+      answer: "現金・PayPayのみのお支払いとさせていただいております。",
+    },
+    {
+      question: "駐車場はありますか？",
+      answer: "はい、院の前に8~9台の駐車スペースがございます。",
+    },
+    {
+      question: "実費診療とは何ですか？",
+      answer:
+        "保険の適用外となる施術です。ご希望や症状に応じて対応いたします。\n初診7,000円、再診4,000円の料金がかかります。\n※当院で治療中の方は初診料は必要ありません。",
+    },
+    {
+      question: "交通事故の際、整骨院でも自賠責保険で治療は受けられますか？",
+      answer:
+        "交通事故によるケガの場合、自賠責保険を適用して治療を受けることができます。\n自賠責の保険を使用している期間中は施術費用はかかりません。病院での治療中でも転療も可能です。",
+    },
+  ];
+
   return (
     <div>
       <section className="w-full flex justify-center items-center py-8">
@@ -65,134 +121,37 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* FAQ Section */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              よくある質問
+            </h2>
+            <p className="text-gray-600">
+              患者様からよくいただくご質問にお答えします
+            </p>
+          </div>
 
-      {/* よくあるご質問セクション */}
-      <section className="max-w-3xl bg-white rounded-lg mx-auto py-12 px-4 mt-8 shadow-md">
-        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
-          よくあるご質問
-        </h2>
-        <ul className="space-y-6 p-3">
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q1. どんな施術ですか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A.
-              お客さんひとりひとりの症状に応じ、その時の最も適した施術をいたします。
-              <br />
-              特に
-              <span className="text-red-500 font-semibold">
-                ソフト・無痛・心地よい手技療法
-              </span>
-              を重要視しており、物理療法と手技治療を行います。
-              <br />
-              患者様の身体に合った施術を行っていますので、安心してご来院ください。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q2. 予約制ですか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A.{" "}
-              <span className="text-red-500 font-semibold">
-                予約なしでも施術可能ですが、予約優先とさせていただいております。
-              </span>
-              <br />
-              なお、水曜・土曜の午後は実費診療となりますので、事前にご連絡ください。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q3. 健康保険は使えますか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A.{" "}
-              <span className="text-red-500 font-semibold">
-                保険適用は可能です。
-              </span>
-              健康保険証かマイナンバーカードを忘れずにお持ちください。
-              <br />
-              当院では、交通事故、各種保険、生活保護等による治療を行っております。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q4. 施術時間はどれくらいですか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A. 初回は40〜50分、2回目以降は30〜40分程度です。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q5. どのような症状に対応していますか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A.
-              肩こり、腰痛、膝の痛み、スポーツ障害、交通事故後のケアなど、幅広い症状に対応しています。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q6. 診察料はいくらですか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A.{" "}
-              <span className="text-red-500 font-semibold">
-                初診時、1500円程度までです。
-              </span>
-              2回目以降は、900円程度までとなります。
-              <br />
-              治療内容にもよりますが、基本的に保険治療ですのでご安心ください。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q7. クレジットカードは使えますか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A. 現金・PayPayのみのお支払いとさせていただいております。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q8. 駐車場はありますか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A. はい、院の前に8~9台の駐車スペースがございます。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q9. 実費診療とは何ですか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A.{" "}
-              <span className="text-red-500 font-semibold">
-                保険の適用外となる施術です。
-              </span>
-              ご希望や症状に応じて対応いたします。
-              <br />
-              初診7,000円、再診4,000円の料金がかかります。
-              ※当院で治療中の方は初診料は必要ありません。
-            </p>
-          </li>
-          <li>
-            <strong className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-md shadow-sm">
-              Q10. 交通事故の際、整骨院でも自賠責保険で治療は受けられますか？
-            </strong>
-            <p className="mt-2 leading-relaxed text-base">
-              A.{" "}
-              <span className="text-red-500 font-semibold">
-                交通事故によるケガの場合、自賠責保険を適用して治療を受けることができます。
-              </span>
-              <br />
-              自賠責の保険を使用している期間中は施術費用はかかりません。病院での治療中でも転療も可能です。
-            </p>
-          </li>
-        </ul>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                className="border-b border-gray-200 "
+                key={index}
+                value={`item-${index}`}
+              >
+                <AccordionTrigger className="text-left text-gray-500 font-bold  hover:no-underline hover:text-gray-900">
+                  Q{index + 1}: {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 font-medium">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </section>
+
       <section className="my-10">
         <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">
           アクセス
