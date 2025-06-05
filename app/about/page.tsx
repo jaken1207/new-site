@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../_comp/_ui/card";
-// import { Badge } from "@/components/ui/badge";
 import { Users } from "lucide-react";
 
 export default function AboutPage() {
@@ -168,7 +167,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
       {/* Manual Therapy Service */}
       <section className="mb-16 m-8">
         <div className="max-w-5xl mx-auto ">
@@ -280,6 +278,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-    // </div>
   );
 }
