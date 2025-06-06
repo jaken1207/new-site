@@ -7,6 +7,11 @@ import {
   CardTitle,
 } from "../_comp/_ui/card";
 import { Users } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "当院について",
+};
 
 export default function AboutPage() {
   const staff = [
