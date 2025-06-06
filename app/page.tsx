@@ -76,7 +76,7 @@ export default function HomePage() {
       {/* Business Hours */}
       <section className="py-16 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <Card className="bg-white shadow-lg rounded-lg border-gray-50">
               <CardHeader>
                 <CardTitle className="flex items-center justify-center">
