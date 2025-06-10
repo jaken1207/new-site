@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 /* styles.css */
 .AccordionContent {
   overflow: hidden;

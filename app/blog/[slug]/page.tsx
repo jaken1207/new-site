@@ -52,7 +52,10 @@ export default async function BlogPost({
         {/* Back Button */}
         <div className="mb-8">
           <Link href="/blog">
-            <Button variant="outline" className="flex items-center">
+            <Button
+              variant="outline"
+              className="flex items-center  hover:bg-green-600 hover:text-white "
+            >
               <ArrowLeft className="h-4 w-4 mr-2" />
               ブログ一覧に戻る
             </Button>
@@ -72,7 +75,7 @@ export default async function BlogPost({
                 {post.author}
               </div>
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl font-bold text-gray-900 mb-6">
               {post.title}
             </h1>
             <div className="relative h-64 md:h-96 w-full mb-8">
@@ -86,7 +89,7 @@ export default async function BlogPost({
           </header>
           {/* Article Content */}
           <div
-            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700"
+            className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
