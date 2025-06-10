@@ -27,7 +27,6 @@ type BlogListProps = {
 };
 
 export default function BlogList({ blogs }: BlogListProps) {
-  console.log(blogs);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {blogs.map((post) => (
