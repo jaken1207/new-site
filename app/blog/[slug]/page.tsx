@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Button } from "@/app/_comp/_ui/Button";
@@ -31,6 +30,7 @@ async function getBlogData(slug: string) {
       image: data.heroImage?.url || "/NoImage.png",
     };
   } catch (error) {
+    console.error("Failed to fetch blog data:", error);
     return null;
   }
 }
@@ -58,7 +58,6 @@ export default async function BlogPost({
             </Button>
           </Link>
         </div>
-
         {/* Article Header */}
         <article>
           <header className="mb-8">
@@ -73,11 +72,9 @@ export default async function BlogPost({
                 {post.author}
               </div>
             </div>
-
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               {post.title}
             </h1>
-
             <div className="relative h-64 md:h-96 w-full mb-8">
               <Image
                 src={post.image}
@@ -87,7 +84,6 @@ export default async function BlogPost({
               />
             </div>
           </header>
-
           {/* Article Content */}
           <div
             className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700"
@@ -99,13 +95,21 @@ export default async function BlogPost({
   );
 }
 
+type Blog = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  author: string;
+  date: string;
+  image: string;
+};
 // 静的生成用に slug 一覧を取得
 export async function generateStaticParams() {
-  const data = await client.getList({
+  const data = await client.getList<Blog>({
     endpoint: "blog",
   });
-
-  return data.contents.map((item: any) => ({
+  return data.contents.map((item) => ({
     slug: item.id,
   }));
 }

@@ -1,4 +1,3 @@
-import { Badge } from "../_comp/_ui/Badge";
 import BlogList from "../_comp/BlogList";
 import CategoryFilter from "../_comp/CategoryFilter";
 import { client } from "../_lib/client";
@@ -8,8 +7,6 @@ export default async function BlogPage() {
     const data = await client.getList({
       endpoint: "blog",
     });
-    console.log(data);
-
     const formattedBlogs = data.contents.map((item) => ({
       slug: item.id,
       title: item.title,
@@ -35,10 +32,9 @@ export default async function BlogPage() {
               健康に関する情報や治療について、専門スタッフが分かりやすく解説します
             </p>
           </div>
-
           {/* Category Filter */}
           <CategoryFilter blogs={formattedBlogs} />
-
+          {/* BlogList */}
           <BlogList blogs={formattedBlogs} />
         </div>
       </div>
