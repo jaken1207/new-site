@@ -2,9 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import { Button } from "@/app/_comp/_ui/Button";
 import { Badge } from "@/app/_comp/_ui/Badge";
 import { client } from "@/app/_lib/client";
+
+type Blog = {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  author: string;
+  date: string;
+  image: string;
+};
 
 // APIから記事を取得
 async function getBlogData(slug: string) {
@@ -35,12 +47,41 @@ async function getBlogData(slug: string) {
   }
 }
 
+// メタデータ生成（オプション）
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogData(slug);
+
+  if (!post) {
+    return {
+      title: "記事が見つかりません",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.content.substring(0, 160).replace(/<[^>]*>/g, ""), // HTMLタグを除去
+    openGraph: {
+      title: post.title,
+      description: post.content.substring(0, 160).replace(/<[^>]*>/g, ""),
+      images: [post.image],
+    },
+  };
+}
+
+// 修正: paramsをPromiseで受け取る
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getBlogData(params.slug);
+  // paramsをawaitで解決
+  const { slug } = await params;
+  const post = await getBlogData(slug);
 
   if (!post) {
     notFound();
@@ -98,23 +139,19 @@ export default async function BlogPost({
   );
 }
 
-type Blog = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  author: string;
-  date: string;
-  image: string;
-};
 // 静的生成用に slug 一覧を取得
-export async function generateStaticParams() {
-  const data = await client.getList<Blog>({
-    endpoint: "blog",
-  });
-  return data.contents.map((item) => ({
-    slug: item.id,
-  }));
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  try {
+    const data = await client.getList<Blog>({
+      endpoint: "blog",
+    });
+    return data.contents.map((item) => ({
+      slug: item.id,
+    }));
+  } catch (error) {
+    console.error("Failed to generate static params:", error);
+    return [];
+  }
 }
 
 export const dynamicParams = false;
