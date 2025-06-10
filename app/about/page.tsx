@@ -92,198 +92,202 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen ">
-      {/* Staff Introduction */}
-      <section className="my-16 max-w-4xl mx-auto ">
-        <div className="text-center mb-12 ">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            スタッフ紹介
-          </h2>
-          <p className="text-gray-600">
-            経験豊富なスタッフが皆様をサポートします
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 m-8">
-          {staff.map((member, index) => (
-            <Card
-              key={index}
-              className="text-center border border-gray-200 shadow-sm"
-            >
-              <CardHeader>
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-                  <Users className="h-16 w-16 text-gray-400" />
-                </div>
-                <CardTitle className="text-xl">{member.name}</CardTitle>
-                <CardDescription className="text-green-600 font-semibold">
-                  {member.role}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 italic">
-                  &quot;{member.message}&quot;
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Treatment Process */}
-      <section className="mb-16 bg-green-50 p-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+    <div className="min-h-screen mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Staff Introduction */}
+        <section className="">
+          <div className="text-center mb-12 ">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              治療の流れ
+              スタッフ紹介
             </h2>
             <p className="text-gray-600">
-              個々の状態や症状にあわせて手技や治療器を用いて施術を行います。
+              経験豊富なスタッフが皆様をサポートします
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {treatmentSteps.map((step, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8">
+            {staff.map((member, index) => (
               <Card
                 key={index}
-                className="text-center border border-gray-200 shadow-sm bg-white"
+                className="text-center border border-gray-200 shadow-sm"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-bold text-green-600">
-                      {step.step}
-                    </span>
+                  <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+                    <Users className="h-16 w-16 text-gray-400" />
                   </div>
-                  <CardTitle className="text-lg">{step.title}</CardTitle>
+                  <CardTitle className="text-xl">{member.name}</CardTitle>
+                  <CardDescription className="text-green-600 font-semibold">
+                    {member.role}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col justify-between">
-                  <div className="mb-4">
-                    <Image
-                      src={step.image}
-                      alt={step.title}
-                      className="block max-w-45 mx-auto rounded-md"
-                      width={500}
-                      height={300}
-                    />
-                  </div>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
+                <CardContent>
+                  <p className="text-sm text-gray-600 italic">
+                    &quot;{member.message}&quot;
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-      {/* Manual Therapy Service */}
-      <section className="mb-16 m-8">
-        <div className="max-w-5xl mx-auto ">
-          <Card className="bg-blue-50 border-blue-200">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center text-blue-800">
-                予約整体治療について
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  このような方におすすめ
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">•</span>
-                    時間通りに施術してほしい
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">•</span>
-                    時間をかけて、ゆっくり診てほしい
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">•</span>
-                    他の人と一緒だと恥ずかしい　など
-                  </li>
-                </ul>
-              </div>
+        </section>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Treatment Process */}
+        <section className="mb-16 bg-green-50 p-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                治療の流れ
+              </h2>
+              <p className="text-gray-600">
+                個々の状態や症状にあわせて手技や治療器を用いて施術を行います。
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {treatmentSteps.map((step, index) => (
+                <Card
+                  key={index}
+                  className="text-center border border-gray-200 shadow-sm bg-white"
+                >
+                  <CardHeader>
+                    <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-2xl font-bold text-green-600">
+                        {step.step}
+                      </span>
+                    </div>
+                    <CardTitle className="text-lg">{step.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex flex-col justify-between">
+                    <div className="mb-4">
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        className="block max-w-45 mx-auto rounded-md"
+                        width={500}
+                        height={300}
+                      />
+                    </div>
+                    <p className="text-gray-600 text-sm">{step.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* Manual Therapy Service */}
+        <section className="mb-16 my-8">
+          <div className="max-w-5xl mx-auto ">
+            <Card className="bg-blue-50 border-blue-200">
+              <CardHeader>
+                <CardTitle className="text-2xl text-center text-blue-800">
+                  予約整体治療について
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                    診療の詳細
+                    このような方におすすめ
                   </h3>
-                  <ul className="space-y-3 text-gray-700">
-                    <li>
-                      <strong className="text-blue-700">実施時間：</strong>
-                      水・土（15:00〜19:00）
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      時間通りに施術してほしい
                     </li>
-                    <li>
-                      <strong className="text-blue-700">予約制：</strong>
-                      当院受付またはお電話にてご予約ください
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      時間をかけて、ゆっくり診てほしい
                     </li>
-                    <li>
-                      <strong className="text-blue-700">保険適用外：</strong>
-                      自費診療となります
-                    </li>
-                    <li>※当院で治療中の方は初診料は必要ありません</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <div className="mb-4 flex items-center justify-between">
-                    <h3 className="text-xl font-semibold text-gray-900 flex-1">
-                      料金
-                    </h3>
-                  </div>
-
-                  <ul className="space-y-3 text-gray-700">
-                    <li className="flex justify-between items-center p-3 bg-white rounded-lg border">
-                      <strong className="text-blue-700">初診：</strong>
-                      <span className="text-xl font-bold text-blue-800">
-                        7,000円
-                      </span>
-                    </li>
-                    <li className="flex justify-between items-center p-3 bg-white rounded-lg border">
-                      <strong className="text-blue-700">再診：</strong>
-                      <span className="text-xl font-bold text-blue-800">
-                        4,000円
-                      </span>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      他の人と一緒だと恥ずかしい　など
                     </li>
                   </ul>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-      <section className="p-8 bg-green-50">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">患者様の声</h2>
-          <p className="text-gray-600">
-            実際に治療を受けられた患者様からのお声をご紹介します
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="border border-gray-200 shadow-sm bg-white"
-            >
-              <CardHeader>
-                <div className="flex items-center justify-between">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <CardTitle className="text-lg">
-                      {testimonial.name}
-                    </CardTitle>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      診療の詳細
+                    </h3>
+                    <ul className="space-y-3 text-gray-700">
+                      <li>
+                        <strong className="text-blue-700">実施時間：</strong>
+                        水・土（15:00〜19:00）
+                      </li>
+                      <li>
+                        <strong className="text-blue-700">予約制：</strong>
+                        当院受付またはお電話にてご予約ください
+                      </li>
+                      <li>
+                        <strong className="text-blue-700">保険適用外：</strong>
+                        自費診療となります
+                      </li>
+                      <li>※当院で治療中の方は初診料は必要ありません</li>
+                    </ul>
                   </div>
-                  <CardDescription>{testimonial.condition}</CardDescription>
+
+                  <div>
+                    <div className="mb-4 flex items-center justify-between">
+                      <h3 className="text-xl font-semibold text-gray-900 flex-1">
+                        料金
+                      </h3>
+                    </div>
+
+                    <ul className="space-y-3 text-gray-700">
+                      <li className="flex justify-between items-center p-3 bg-white rounded-lg border">
+                        <strong className="text-blue-700">初診：</strong>
+                        <span className="text-xl font-bold text-blue-800">
+                          7,000円
+                        </span>
+                      </li>
+                      <li className="flex justify-between items-center p-3 bg-white rounded-lg border">
+                        <strong className="text-blue-700">再診：</strong>
+                        <span className="text-xl font-bold text-blue-800">
+                          4,000円
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  &quot;{testimonial.comment}&quot;
-                </p>
               </CardContent>
             </Card>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+        <section className="p-8 bg-green-50">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              患者様の声
+            </h2>
+            <p className="text-gray-600">
+              実際に治療を受けられた患者様からのお声をご紹介します
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <Card
+                key={index}
+                className="border border-gray-200 shadow-sm bg-white"
+              >
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <CardTitle className="text-lg">
+                        {testimonial.name}
+                      </CardTitle>
+                    </div>
+                    <CardDescription>{testimonial.condition}</CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    &quot;{testimonial.comment}&quot;
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
