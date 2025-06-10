@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, User } from "lucide-react";
+import { Calendar, User, FileText } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -27,6 +27,23 @@ type BlogListProps = {
 };
 
 export default function BlogList({ blogs }: BlogListProps) {
+  // 記事が一件もない場合の空の状態を表示
+  if (blogs.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-16 px-4">
+        <div className="text-center">
+          <FileText className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            記事がありません
+          </h3>
+          <p className="text-gray-500 max-w-md">
+            まだブログ記事が投稿されていません。最初の記事が投稿されるまでお待ちください。
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {blogs.map((post) => (
