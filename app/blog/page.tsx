@@ -18,7 +18,7 @@ export default async function BlogPage() {
       author:
         Array.isArray(item.author) && item.author.length > 0
           ? item.author[0]
-          : "匿名",
+          : "",
       date: item.publishedAt?.split("T")[0],
       image: item.heroImage?.url || "/NoImage.png",
     }));

@@ -79,8 +79,12 @@ export default function BlogList({ blogs }: BlogListProps) {
                 {post.excerpt}
               </CardDescription>
               <div className="flex items-center text-sm text-gray-500">
-                <User className="h-4 w-4 mr-1" />
-                {post.author}
+                {post.author && (
+                  <>
+                    <User className="h-4 w-4 mr-1" />
+                    {post.author}
+                  </>
+                )}
               </div>
             </CardContent>
           </Card>

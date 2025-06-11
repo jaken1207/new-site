@@ -37,7 +37,7 @@ async function getBlogData(slug: string) {
       author:
         Array.isArray(data.author) && data.author.length > 0
           ? data.author[0]
-          : "匿名",
+          : "",
       date: data.publishedAt?.split("T")[0],
       image: data.heroImage?.url || "/NoImage.png",
     };
