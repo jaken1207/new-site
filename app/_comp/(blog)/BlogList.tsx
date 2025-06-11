@@ -47,7 +47,7 @@ export default function BlogList({ blogs }: BlogListProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {blogs.map((post) => (
-        <Link key={post.slug} href={`/blog/${post.slug}`} className="">
+        <Link key={post.slug} href={`/news/${post.slug}`} className="">
           <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border border-gray-200 shadow-sm">
             <div className="relative h-48 w-full">
               <Image

@@ -92,7 +92,7 @@ export default async function BlogPost({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <div className="mb-8">
-          <Link href="/blog">
+          <Link href="/news">
             <Button
               variant="outline"
               className="flex items-center  hover:bg-green-600 hover:text-white "

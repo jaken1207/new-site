@@ -59,7 +59,7 @@ export default function Footer() {
             <Link href="/about" className="text-gray-400 hover:text-white">
               当院について
             </Link>
-            <Link href="/blog" className="text-gray-400 hover:text-white">
+            <Link href="/news" className="text-gray-400 hover:text-white">
               ブログ
             </Link>
           </nav>

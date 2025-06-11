@@ -11,7 +11,7 @@ export default function Header() {
   const navigation = [
     { name: "ホーム", href: "/" },
     { name: "当院について", href: "/about" },
-    { name: "お知らせ", href: "/" },
+    { name: "お知らせ", href: "/news" },
   ];
 
   return (
