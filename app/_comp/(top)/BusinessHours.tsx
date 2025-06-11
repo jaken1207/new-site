@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../_ui/card";
 import { Clock, Phone } from "lucide-react";
+import Link from "next/link";
 
 const BusinessHours = () => {
   return (
@@ -44,7 +45,9 @@ const BusinessHours = () => {
                 </div>
               </div>
               <div className="mt-4 p-3 bg-red-100 text-red-700 border border-red-300 rounded text-center">
-                <strong>お知らせ：</strong>直近のお知らせはありません。
+                <Link href="/news" className="text-red-700 hover:text-gray-700">
+                  お知らせ一覧はこちら
+                </Link>
               </div>
             </CardContent>
           </Card>
