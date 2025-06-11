@@ -9,8 +9,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./_ui/card";
-import { Badge } from "./_ui/Badge";
+} from "../_ui/card";
+import { Badge } from "../_ui/Badge";
 
 type Blog = {
   slug: string;

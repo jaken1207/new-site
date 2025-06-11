@@ -1,7 +1,7 @@
-import HeroImage from "./_comp/HeroImage";
-import BusinessHours from "./_comp/BusinessHours";
-import FAQSection from "./_comp/FAQSection";
-import AccessMap from "./_comp/AccessMap";
+import HeroImage from "./_comp/(top)/HeroImage";
+import BusinessHours from "./_comp/(top)/BusinessHours";
+import FAQSection from "./_comp/(top)/FAQSection";
+import AccessMap from "./_comp/(top)/AccessMap";
 
 export default function HomePage() {
   const faqs = [

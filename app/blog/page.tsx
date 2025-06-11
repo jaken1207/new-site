@@ -1,5 +1,5 @@
-import BlogList from "../_comp/BlogList";
-import CategoryFilter from "../_comp/CategoryFilter";
+import BlogList from "../_comp/(blog)/BlogList";
+import CategoryFilter from "../_comp/(blog)/CategoryFilter";
 import { client } from "../_lib/client";
 
 export default async function BlogPage() {

@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../_comp/_ui/accordion";
+} from "../_ui/accordion";
 import React from "react";
 
 type FAQ = {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "./_ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../_ui/card";
 import { MapPin } from "lucide-react";
 
 const AccessMap = () => {

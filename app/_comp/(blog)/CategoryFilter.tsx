@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge } from "./_ui/Badge";
+import { Badge } from "../_ui/Badge";
 
 type Blog = {
   slug: string;
