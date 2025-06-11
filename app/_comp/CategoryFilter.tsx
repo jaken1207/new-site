@@ -20,10 +20,10 @@ const CategoryFilter = ({ blogs }: BlogListProps) => {
   const uniqueCategories = Array.from(
     new Set(blogs.map((blog) => blog.category))
   );
-
+  const allCategories = ["すべて", ...uniqueCategories];
   return (
     <div className="flex flex-wrap gap-2 justify-center mb-12">
-      {uniqueCategories.map((category) => (
+      {allCategories.map((category) => (
         <Badge
           key={category}
           variant={category === "すべて" ? "default" : "secondary"}
