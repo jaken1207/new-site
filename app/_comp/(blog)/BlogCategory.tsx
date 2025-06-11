@@ -15,7 +15,7 @@ type BlogListProps = {
   blogs: Blog[];
 };
 
-const CategoryFilter = ({ blogs }: BlogListProps) => {
+const BlogCategory = ({ blogs }: BlogListProps) => {
   // 重複を除去してユニークなカテゴリのみを取得
   const uniqueCategories = Array.from(
     new Set(blogs.map((blog) => blog.category))
@@ -36,4 +36,4 @@ const CategoryFilter = ({ blogs }: BlogListProps) => {
   );
 };
 
-export default CategoryFilter;
+export default BlogCategory;

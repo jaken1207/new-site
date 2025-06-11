@@ -1,5 +1,5 @@
+import BlogCategory from "../_comp/(blog)/BlogCategory";
 import BlogList from "../_comp/(blog)/BlogList";
-import CategoryFilter from "../_comp/(blog)/CategoryFilter";
 import { client } from "../_lib/client";
 
 export default async function BlogPage() {
@@ -33,7 +33,7 @@ export default async function BlogPage() {
             </p>
           </div>
           {/* Category Filter */}
-          <CategoryFilter blogs={formattedBlogs} />
+          <BlogCategory blogs={formattedBlogs} />
           {/* BlogList */}
           <BlogList blogs={formattedBlogs} />
         </div>
