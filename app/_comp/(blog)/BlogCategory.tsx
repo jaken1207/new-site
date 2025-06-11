@@ -13,9 +13,15 @@ type Blog = {
 
 type BlogListProps = {
   blogs: Blog[];
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
 };
 
-const BlogCategory = ({ blogs }: BlogListProps) => {
+const BlogCategory = ({
+  blogs,
+  selectedCategory,
+  onCategoryChange,
+}: BlogListProps) => {
   // 重複を除去してユニークなカテゴリのみを取得
   const uniqueCategories = Array.from(
     new Set(blogs.map((blog) => blog.category))
@@ -26,8 +32,12 @@ const BlogCategory = ({ blogs }: BlogListProps) => {
       {allCategories.map((category) => (
         <Badge
           key={category}
-          variant={category === "すべて" ? "default" : "secondary"}
-          className="cursor-pointer hover:bg-green-600 hover:text-white border border-gray-200 shadow-sm"
+          variant={selectedCategory === category ? "default" : "secondary"}
+          className={
+            `cursor-pointer border border-gray-200 shadow-sm hover:bg-green-600 hover:text-white ` +
+            (selectedCategory === category ? "bg-green-600 text-white" : "")
+          }
+          onClick={() => onCategoryChange(category)}
         >
           {category}
         </Badge>

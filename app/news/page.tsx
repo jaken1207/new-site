@@ -1,8 +1,7 @@
-import BlogCategory from "../_comp/(blog)/BlogCategory";
-import BlogList from "../_comp/(blog)/BlogList";
+import BlogPage from "../_comp/(blog)/BlogPage";
 import { client } from "../_lib/client";
 
-export default async function BlogPage() {
+export default async function Page() {
   try {
     const data = await client.getList({
       endpoint: "news",
@@ -32,10 +31,7 @@ export default async function BlogPage() {
               営業時間の変更や休診日のお知らせ、ブログなど、最新の情報をこちらで随時発信してまいります。
             </p>
           </div>
-          {/* Category Filter */}
-          <BlogCategory blogs={formattedBlogs} />
-          {/* BlogList */}
-          <BlogList blogs={formattedBlogs} />
+          <BlogPage blogs={formattedBlogs} />
         </div>
       </div>
     );
