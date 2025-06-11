@@ -5,7 +5,7 @@ import { client } from "../_lib/client";
 export default async function BlogPage() {
   try {
     const data = await client.getList({
-      endpoint: "blog",
+      endpoint: "news",
     });
     const formattedBlogs = data.contents.map((item) => ({
       slug: item.id,

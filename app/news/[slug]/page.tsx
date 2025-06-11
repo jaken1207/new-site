@@ -22,7 +22,7 @@ type Blog = {
 async function getBlogData(slug: string) {
   try {
     const data = await client.getListDetail({
-      endpoint: "blog",
+      endpoint: "news",
       contentId: slug,
     });
 
@@ -143,7 +143,7 @@ export default async function BlogPost({
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   try {
     const data = await client.getList<Blog>({
-      endpoint: "blog",
+      endpoint: "news",
     });
     return data.contents.map((item) => ({
       slug: item.id,
