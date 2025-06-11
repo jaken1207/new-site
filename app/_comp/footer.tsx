@@ -60,7 +60,7 @@ export default function Footer() {
               当院について
             </Link>
             <Link href="/news" className="text-gray-400 hover:text-white">
-              ブログ
+              お知らせ
             </Link>
           </nav>
         </div>
