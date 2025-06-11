@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import BlogPage from "../_comp/(blog)/BlogPage";
 import { client } from "../_lib/client";
+
+export const metadata: Metadata = {
+  title: "お知らせ一覧",
+};
 
 export default async function Page() {
   try {
