@@ -1,29 +1,42 @@
 import { Metadata } from "next";
 import BlogPage from "../_comp/(blog)/BlogPage";
 import { client } from "../_lib/client";
+import { MicroCMSListResponse } from "microcms-js-sdk";
 
 export const metadata: Metadata = {
   title: "お知らせ一覧",
 };
-
+type BlogItem = {
+  id: string;
+  title: string;
+  excerpt: string;
+  category: string[];
+  author: string[];
+  publishedAt: string;
+  heroImage?: {
+    url: string;
+  };
+};
 export default async function Page() {
   try {
-    const data = await client.getList({
-      endpoint: "news",
-    });
+    const data: MicroCMSListResponse<BlogItem> = await client.getList<BlogItem>(
+      {
+        endpoint: "news",
+      }
+    );
     const formattedBlogs = data.contents.map((item) => ({
+      // item.idをページを識別するためのslugとして使用
       slug: item.id,
       title: item.title,
       excerpt: item.excerpt,
-      category:
-        Array.isArray(item.category) && item.category.length > 0
-          ? item.category[0]
-          : "未分類",
+      category: item.category[0],
       author:
         Array.isArray(item.author) && item.author.length > 0
           ? item.author[0]
           : "",
       date: item.publishedAt?.split("T")[0],
+      // heroImageが存在しない場合はデフォルト画像を使用
+      // ここでは、item.heroImage?.urlが存在しない場合に"/NoImage.png"を使用
       image: item.heroImage?.url || "/NoImage.png",
     }));
 

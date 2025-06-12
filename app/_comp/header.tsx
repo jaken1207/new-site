@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigation = [
+  const navigation: { name: string; href: string }[] = [
     { name: "ホーム", href: "/" },
     { name: "当院について", href: "/about" },
     { name: "お知らせ", href: "/news" },
