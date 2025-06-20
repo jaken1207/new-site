@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../_comp/_ui/card";
-import { Users } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,11 +16,13 @@ export default function AboutPage() {
   const staff = [
     {
       name: "永田 正太郎",
+      image: "/staff_01.jpg",
       role: "院長、柔道整復師",
       message: "患者様一人ひとりに寄り添った治療を心がけております。",
     },
     {
       name: "永田 寿子",
+      image: "/staff_02.jpg",
       role: "スタッフ",
       message: "女性の患者様も安心してご相談ください。",
     },
@@ -112,8 +113,14 @@ export default function AboutPage() {
                 className="text-center border border-gray-200 shadow-sm"
               >
                 <CardHeader>
-                  <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-                    <Users className="h-16 w-16 text-gray-400" />
+                  <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full flex items-center shadow-md border-4 border-green-100 justify-center overflow-hidden">
+                    <Image
+                      width={128}
+                      height={128}
+                      src={member.image}
+                      alt="スタッフ画像"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
                   <CardDescription className="text-green-600 font-semibold">
