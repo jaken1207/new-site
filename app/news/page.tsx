@@ -39,7 +39,9 @@ export default async function Page() {
       // ここでは、item.heroImage?.urlが存在しない場合に"/NoImage.png"を使用
       image: item.heroImage?.url || "/NoImage.png",
     }));
-
+    const sortedBlogs = formattedBlogs.sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
     return (
       <div className="min-h-screen py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,7 +51,7 @@ export default async function Page() {
               営業時間の変更や休診日のお知らせ、ブログなど、最新の情報をこちらで随時発信してまいります。
             </p>
           </div>
-          <BlogPage blogs={formattedBlogs} />
+          <BlogPage blogs={sortedBlogs} />
         </div>
       </div>
     );
