@@ -13,7 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const staff = [
+  const staff: {
+    name: string;
+    image: string;
+    role: string;
+    message: string;
+  }[] = [
     {
       name: "永田 正太郎",
       image: "/staff_01.jpg",
@@ -28,7 +33,12 @@ export default function AboutPage() {
     },
   ];
 
-  const treatmentSteps = [
+  const treatmentSteps: {
+    step: number;
+    title: string;
+    description: string;
+    image: string;
+  }[] = [
     {
       step: 1,
       title: "問診と検査",
@@ -59,7 +69,11 @@ export default function AboutPage() {
     },
   ];
 
-  const testimonials = [
+  const testimonials: {
+    name: string;
+    condition: string;
+    comment: string;
+  }[] = [
     {
       name: "50代 男性",
       condition: "肩痛",
@@ -136,7 +150,6 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
-
         {/* Treatment Process */}
         <section className="mb-16 bg-green-50 p-8">
           <div className="max-w-5xl mx-auto">
@@ -259,6 +272,7 @@ export default function AboutPage() {
             </Card>
           </div>
         </section>
+        {/* Testimonials Section */}
         <section className="p-8 bg-green-50">
           <div className="text-center mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
