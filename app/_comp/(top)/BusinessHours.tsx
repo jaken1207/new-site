@@ -22,11 +22,11 @@ const BusinessHours = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-gray-300">
                   <span className="font-medium">月・火・木・金</span>
-                  <span>8:30-12:30 / 15:00-19:00</span>
+                  <span>8:00-12:30 / 15:00-19:00</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-300">
                   <span className="font-medium">水・土</span>
-                  <span>8:30-12:30 / 15:00-（実費診療）</span>
+                  <span>8:00-12:30 / 15:00-（実費診療）</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-300">
                   <span className="font-medium">日・祝</span>
@@ -34,6 +34,9 @@ const BusinessHours = () => {
                 </div>
               </div>
               <div className="mt-6 flex flex-col items-center gap-2">
+                <p className="text-gray-600 text-center mt-2">
+                  ※診療時間終了の10分前までにご来院ください。
+                </p>
                 <p className="text-gray-600 text-center mt-2">
                   予約優先での診療を行っております。お気軽にご連絡ください。
                 </p>
